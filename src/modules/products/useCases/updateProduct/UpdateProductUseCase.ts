@@ -21,6 +21,7 @@ export class UpdateProductUseCase {
     if (!product) {
       throw new AppError('Product does not exists')
     }
+
     product.name = name;
 
     const newProduct = await this.productRepository.update(product);
