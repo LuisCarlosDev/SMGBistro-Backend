@@ -7,8 +7,10 @@ import '../typeorm';
 
 import { router } from './routes';
 import { AppError } from '../../errors/AppError';
+import { Logger } from '../../Logger';
 
 const app = express();
+const logger = new Logger();
 
 app.use(express.json());
 
@@ -30,4 +32,4 @@ app.use(
   },
 );
 
-app.listen(3333, () =>  console.log('Server is running on port 3333'))
+app.listen(3333, () =>  logger.info('Server is running on port 3333'))
